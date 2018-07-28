@@ -1,0 +1,32 @@
+{
+  "name": "fit-cli",
+  "version": "0.0.1",
+  "description": "Open source CLI-based fitness tracker.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevLifts/fit-cli.git"
+  },
+  "keywords": [
+    "fitness",
+    "health",
+    "wellness",
+    "sleep",
+    "nutrition",
+    "diet",
+    "meals",
+    "workouts",
+    "exercise",
+    "fit",
+    "cli"
+  ],
+  "author": "DevLifts",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DevLifts/fit-cli/issues"
+  },
+  "homepage": "https://github.com/DevLifts/fit-cli#readme"
+}
