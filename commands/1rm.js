@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const colors = require('colors');
-const { exercises } = require('../exercises');
+const { exercises } = require('../options');
 
 const controller = [
   { type: 'list', name: 'exercise', message: 'Choose an exercise', choices: exercises },

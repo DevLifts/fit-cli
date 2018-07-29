@@ -1,5 +1,5 @@
 import colors from 'colors';
-import { exercises } from '../exercises';
+import { exercises } from '../options';
 
 
 export function list() {
