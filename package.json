@@ -31,5 +31,10 @@
   "bugs": {
     "url": "https://github.com/DevLifts/fit-cli/issues"
   },
-  "homepage": "https://github.com/DevLifts/fit-cli#readme"
+  "homepage": "https://github.com/DevLifts/fit-cli#readme",
+  "dependencies": {
+    "co": "^4.6.0",
+    "co-prompt": "^1.0.0",
+    "commander": "^2.16.0"
+  }
 }
