@@ -15,4 +15,8 @@ program
         log();
     });
 
+if ( process.argv.length < 3 ) {
+  log();
+}
+
 program.parse(process.argv);
