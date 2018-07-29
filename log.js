@@ -2,6 +2,9 @@ const inquirer = require('inquirer');
 const colors = require('colors');
 const { types } = require('./types');
 const onerm = require('./1rm');
+const meal = require('./meal');
+const sleep = require('./sleep');
+const workout = require('./workout');
 
 const controller = [
   { type: 'list', name: 'type', message: 'What do you want to log?', choices: types }
@@ -14,6 +17,21 @@ exports.log = () => {
       const { type } = answers;
       console.log(colors.green('Logging ' + type + '...'));
 
-      return type === '1rm' ? onerm() : null
+      switch (type) {
+        case '1rm':
+          onerm();
+          break;
+        case 'meal':
+          meal();
+          break;
+        case 'sleep':
+          sleep();
+          break;
+        case 'workout':
+          workout();
+          break;
+        default:
+          console.log("error");
+      }
   });
 }

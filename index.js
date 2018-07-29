@@ -15,13 +15,4 @@ program
         log();
     });
 
-program
-    .command('test')
-    .alias('t')
-    .description('Test')
-
-    .action(function () {
-        console.log("tested!")
-    });
-
 program.parse(process.argv);
