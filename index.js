@@ -1,18 +1,27 @@
 #!/usr/bin/env node --harmony
-var co = require('co');
-var prompt = require('co-prompt');
-var program = require('commander');
+const program = require('commander')
+const { log } = require('./log');
 
 program
-  .arguments('<file>')
-  .option('-u, --username <username>', 'The user to authenticate as')
-  .option('-p, --password <password>', 'The user\'s password')
-  .action(function(file) {
-    co(function *() {
-      var username = yield prompt('username: ');
-      var password = yield prompt.password('password: ');
-      console.log('user: %s pass: %s file: %s',
-      username, password, file);
-  })
-})
-  .parse(process.argv);
+  .version('0.0.1')
+  .description('Fitness logger for developers');
+
+program
+    .command('log')
+    .alias('l')
+    .description('Log something')
+
+    .action(function () {
+        log();
+    });
+
+program
+    .command('test')
+    .alias('t')
+    .description('Test')
+
+    .action(function () {
+        console.log("tested!")
+    });
+
+program.parse(process.argv);
