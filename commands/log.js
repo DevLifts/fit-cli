@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const colors = require('colors');
-const { types } = require('./types');
+const { types } = require('../types');
 const onerm = require('./1rm');
 const meal = require('./meal');
 const sleep = require('./sleep');

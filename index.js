@@ -1,6 +1,6 @@
 #!/usr/bin/env node --harmony
 const program = require('commander')
-const { log } = require('./log');
+const { log } = require('./commands/log');
 
 program
   .version('0.0.1')
