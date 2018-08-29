@@ -11,7 +11,7 @@
 - Ability to retrieve things you've logged (would be really interesting if this could actually just be returning JSON from the API)
 
 ## Setup
-Run `npm link`
+Run `npm link` in the project directory.
 
 ## Usage
 
