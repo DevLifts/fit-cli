@@ -10,6 +10,9 @@
 - Ability to log meals (I'm thinking a bare minimum implementation would take a meal name, protein, fat, and carbs)
 - Ability to retrieve things you've logged (would be really interesting if this could actually just be returning JSON from the API)
 
+## Setup
+Run `npm link` in the project directory.
+
 ## Usage
 
 ### 1RM
