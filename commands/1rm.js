@@ -16,21 +16,12 @@ const controller = [
 
 module.exports = function() {
   inquirer.prompt(controller).then(function(answers) {
-    console.log(answers);
-    // save to this directory as JSON
+    const fileAsJSON = fetchDB();
 
-    const file = fs.readFileSync(
-      path.join(__dirname, "..", "localDB.json"),
-      "utf8"
-    );
-    const fileAsJSON = JSON.parse(file);
     fileAsJSON.onerm[answers.exercise] = answers.weight;
-    console.log(fileAsJSON);
-    fs.writeFileSync(
-      path.join(__dirname, "..", "localDB.json"),
-      JSON.stringify(fileAsJSON),
-      "utf8"
-    );
+
+    updateDB(fileAsJSON);
+
     console.log(
       colors.green(
         "Logged " + answers.weight + " as new " + answers.exercise + " max."
@@ -46,3 +37,20 @@ module.addMax = (weight, exercise) => {
 module.getMax = exercise => {
   return data.maxes.exercise ? data.maxes.exercise : null;
 };
+
+function updateDB(fileAsJSON) {
+  fs.writeFileSync(
+    path.join(__dirname, "..", "localDB.json"),
+    JSON.stringify(fileAsJSON),
+    "utf8"
+  );
+}
+
+function fetchDB() {
+  const file = fs.readFileSync(
+    path.join(__dirname, "..", "localDB.json"),
+    "utf8"
+  );
+  const fileAsJSON = JSON.parse(file);
+  return fileAsJSON;
+}
