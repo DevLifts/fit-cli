@@ -4,11 +4,6 @@ exports.exercises = [
   "deadlift",
   "overhead press",
   "bent over row"
-]
+];
 
-exports.types = [
-  "1rm",
-  "meal",
-  "sleep",
-  "workout"
-]
+exports.types = ["1rm", "meal", "sleep", "workout"];
