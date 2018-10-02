@@ -1,5 +1,5 @@
-const fs = require("fs");
-const path = require("path");
+const { fetchDB } = require("../dbUtils/fetchDB");
+const { updateDB } = require("../dbUtils/updateDB");
 const inquirer = require("inquirer");
 const colors = require("colors");
 const { exercises } = require("../options");
@@ -29,28 +29,3 @@ module.exports = function() {
     );
   });
 };
-
-module.addMax = (weight, exercise) => {
-  console.log("New max of " + weight + " added to " + exercise);
-};
-
-module.getMax = exercise => {
-  return data.maxes.exercise ? data.maxes.exercise : null;
-};
-
-function updateDB(fileAsJSON) {
-  fs.writeFileSync(
-    path.join(__dirname, "..", "localDB.json"),
-    JSON.stringify(fileAsJSON),
-    "utf8"
-  );
-}
-
-function fetchDB() {
-  const file = fs.readFileSync(
-    path.join(__dirname, "..", "localDB.json"),
-    "utf8"
-  );
-  const fileAsJSON = JSON.parse(file);
-  return fileAsJSON;
-}
