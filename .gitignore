@@ -1,1 +1,6 @@
 node_modules/
+
+# By default, we don't track the file used to store your
+# personal data. If you'd like to change that, simply
+# comment out the line below.
+localDB.json
