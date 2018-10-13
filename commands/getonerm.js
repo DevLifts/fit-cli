@@ -42,10 +42,21 @@ getAllOneRM = function() {
 
 
 
-exports.getOneRM = function(options) {
+exports.getOneRM = function(exerciseArg, options) {
     if (options.all) {
         getAllOneRM();
-    } else {
+    } else if (exerciseArg) {
+        const fileAsJSON = fetchDB();
+
+        oneRM = fileAsJSON.onerm[exerciseArg];
+        console.log(
+                colors.green(
+                  "Current one rep max for " + exerciseArg + " is " + oneRM + "."
+                )
+            );
+
+    }
+    else {
 
     inquirer.prompt(controller).then(function(answers) {
       const fileAsJSON = fetchDB();

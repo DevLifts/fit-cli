@@ -20,7 +20,7 @@ if (process.argv.length < 3) {
 }
 
 program
-  .command("onerm")
+  .command('onerm [exerciseArg]')
   .alias("one")
   .option('-a, --all','retrieve 1RM for all exercises')
   .description("Fetch one rep max of exercise")
@@ -28,8 +28,8 @@ program
   .action(
       // if -a flag is set, return one rep max for all lifts
       
-          function(options) {
-              getOneRM(options);
+          function(exerciseArg, options) {
+              getOneRM(exerciseArg, options);
     })
 .parse(process.argv);
 
