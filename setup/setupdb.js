@@ -8,6 +8,20 @@ const intialDB = `{
     "deadlift": 0,
     "overhead press": 0,
     "bent over row": 0
+  },
+  "threerm": {
+    "bench press": 0,
+    "squat": 0,
+    "deadlift": 0,
+    "overhead press": 0,
+    "bent over row": 0
+  },
+  "fiverm": {
+    "bench press": 0,
+    "squat": 0,
+    "deadlift": 0,
+    "overhead press": 0,
+    "bent over row": 0
   }
 }`;
 

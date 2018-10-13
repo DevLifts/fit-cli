@@ -6,4 +6,4 @@ exports.exercises = [
   "bent over row"
 ];
 
-exports.types = ["1rm", "meal", "sleep", "workout"];
+exports.types = ["1rm", "3rm", "5rm", "meal", "sleep", "workout"];
