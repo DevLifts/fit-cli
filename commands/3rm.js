@@ -11,20 +11,20 @@ const controller = [
     message: "Choose an exercise",
     choices: exercises
   },
-  { type: "input", name: "weight", message: "What's your new one rep max?" }
+  { type: "input", name: "weight", message: "What's your new three rep max?" }
 ];
 
 module.exports = function() {
   inquirer.prompt(controller).then(function(answers) {
     const fileAsJSON = fetchDB();
 
-    fileAsJSON.onerm[answers.exercise] = answers.weight;
+    fileAsJSON.threerm[answers.exercise] = answers.weight;
 
     updateDB(fileAsJSON);
 
     console.log(
       colors.green(
-        "Logged " + answers.weight + " as new " + answers.exercise + " one rep max."
+        "Logged " + answers.weight + " as new " + answers.exercise + " three rep max."
       )
     );
   });

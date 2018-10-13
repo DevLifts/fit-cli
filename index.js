@@ -1,6 +1,7 @@
 #!/usr/bin/env node --harmony
 const program = require("commander");
 const { log } = require("./commands/log");
+const { getOneRM } = require("./commands/getonerm")
 
 program.version("0.0.1").description("Fitness logger for developers");
 
@@ -12,6 +13,25 @@ program
   .action(function() {
     log();
   });
+
+if (process.argv.length < 3) {
+      log();
+
+}
+
+program
+  .command('onerm [exerciseArg]')
+  .alias("one")
+  .option('-a, --all','retrieve 1RM for all exercises')
+  .description("Fetch one rep max of exercise")
+
+  .action(
+      // if -a flag is set, return one rep max for all lifts
+      
+          function(exerciseArg, options) {
+              getOneRM(exerciseArg, options);
+    })
+.parse(process.argv);
 
 if (process.argv.length < 3) {
   log();
