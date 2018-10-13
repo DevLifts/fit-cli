@@ -14,14 +14,24 @@ program
     log();
   });
 
+if (process.argv.length < 3) {
+      log();
+
+}
+
 program
   .command("onerm")
   .alias("one")
+  .option('-a, --all','retrieve 1RM for all exercises')
   .description("Fetch one rep max of exercise")
 
-  .action(function() {
-    getOneRM();
-  });
+  .action(
+      // if -a flag is set, return one rep max for all lifts
+      
+          function(options) {
+              getOneRM(options);
+    })
+.parse(process.argv);
 
 if (process.argv.length < 3) {
   log();
