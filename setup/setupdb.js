@@ -8,7 +8,8 @@ const intialDB = `{
     "deadlift": 0,
     "overhead press": 0,
     "bent over row": 0
-  }
+  },
+  "sleep": {}
 }`;
 
 fs.writeFileSync(__dirname + "/../localDB.json", intialDB);
