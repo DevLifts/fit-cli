@@ -9,4 +9,4 @@ function fetchDB() {
   const fileAsJSON = JSON.parse(file);
   return fileAsJSON;
 }
-exports.fetchDB = fetchDB;
+exports.fetchDB = fetchDB();
